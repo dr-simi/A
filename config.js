@@ -97,7 +97,7 @@ module.exports = kconfig = async (kill, message) => {
                 Ad: '¡Errores! No pude agregarlo, podría deberse a la limitación de agregar o mis errores.',
                 Go: 'Por qué, solo el propietario de un grupo puede usar este tipo de comando.',
 				Kl: '¡Ups! Ese es solo mi creador, no puedes acceder.',
-				Ga: 'Solo los administradores pueden usarlo, así que chaoo jaja!',
+				Ga: 'No pesco weones',
 				Gp: 'Lo siento, pero este es un comando para grupos.🕳💦.',
 				Ac: 'Solo los grupos que permiten contenido +18 pueden usar comandos como este, si usted es el propietario y desea esto, use /nsfw enable o use en PRIV.',
 				Ba: 'Estimado administrador, si desea que use estos comandos, debe permitirme ser miembro😙!',
