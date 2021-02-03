@@ -300,18 +300,26 @@ module.exports = kconfig = async (kill, message) => {
         case 'stickergif':
         case 'stikergif':
         case 'gif':
-            if (isMedia && type == 'video') {
-                if (mimetype === 'video/mp4' && message.duration < 30) {
-                const mediaData = await decryptMedia(message, uaOverride)
-               const filename = `./media/aswu.mp4`
-                await fs.writeFile(filename, mediaData)
-                await exec('ffmpeg -i ./media/aswu.mp4 -vf scale=512:-1 -r 10 -f image2pipe -framerate 24 -vcodec ppm - | convert -delay 0 -loop 0 - ./media/output.gif')
-                const contents = await fs.readFile('./media/output.gif', {encoding: 'base64'}) 
-                await kill.sendImageAsSticker(from, `data:image/gif;base64,${contents.toString('base64')}`)
-                }
-            }
-		break
-		    
+             if (isMedia || isQuotedVideo) {
+                if (mimetype === 'video/mp4' && message.duration < 10 || mimetype === 'image/gif' && message.duration < 10) {
+                    var mediaData = await decryptMedia(message, uaOverride)
+                    aruga.reply(from, '[WAIT] Sedang di proses⏳ silahkan tunggu ± 1 min!', id)
+                    var filename = `./media/stickergif.${mimetype.split('/')[1]}`
+                    await fs.writeFileSync(filename, mediaData)
+                    await exec(`gify ${filename} ./media/stickergf.gif --fps=30 --scale=240:240`, async function (error, stdout, stderr) {
+                        var gif = await fs.readFileSync('./media/stickergf.gif', { encoding: "base64" })
+                        await aruga.sendImageAsSticker(from, `data:image/gif;base64,${gif.toString('base64')}`)
+                        .catch(() => {
+                            aruga.reply(from, 'Maaf filenya terlalu besar!', id)
+                        })
+                    })
+                  } else {
+                    aruga.reply(from, `[❗] Kirim gif dengan caption *${prefix}stickergif* max 10 sec!`, id)
+                   }
+                } else {
+		    aruga.reply(from, `[❗] Kirim gif dengan caption *${prefix}stickergif*`, id)
+	        }
+            break
 		case 'upimg':
             if (isMedia && type === 'image') {
                 const mediaData = await decryptMedia(message, uaOverride)
