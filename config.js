@@ -100,7 +100,7 @@ module.exports = kconfig = async (kill, message) => {
 				Ga: 'No pesco weones',
 				Gp: 'Lo siento, pero este es un comando para grupos.🕳💦.',
 				Ac: 'Solo los grupos que permiten contenido +18 pueden usar comandos como este, si usted es el propietario y desea esto, use /nsfw enable o use en PRIV.',
-				Ba: 'Estimado administrador, si desea que use estos comandos, debe permitirme ser miembro😙!',
+				Ba: 'Estimado administrador, si desea que use estos comandos, debe permitirme ser Admin😙!',
                 Iv: '¿Este enlace es correcto? Me parece mal...'
             }
         }
@@ -1009,7 +1009,7 @@ module.exports = kconfig = async (kill, message) => {
 
 
         case 'criador':
-            kill.sendContact(from, 'wa.me/+529984907794')
+            kill.sendContact(from, 'wa.me/+5299849074')
 			kill.reply(from, 'Si no responde, solo espera, es raro que deje Internet ~Smitten guy sabe~, pero si sucedió, fue algo importante..', id)
             break
 
@@ -1017,7 +1017,7 @@ module.exports = kconfig = async (kill, message) => {
         case 'donate':
 		case 'doar':
             kill.sendText(from, donate, id)
-            kill.sendContact(from, 'wa.me/+529984907794')
+            kill.sendContact(from, 'wa.me/+5299847794')
             break
 
 
@@ -2390,16 +2390,13 @@ module.exports = kconfig = async (kill, message) => {
 			
 
         case 'gay':
-            gaak = body.trim().split(' ')
-    	    var lgbt = ["lésbica", "gay", "bissexual", "transgenero", "queer", "intersexual", "pedro-sexual", "negrosexual", "helicoptero sexual", "ageneros", "androgino", "assexual", "macaco-sexual", "dedo-sexual", "Sexo-Inexplicavel", "predio-sexual", "sexual-não-sexual", "pansexual", "kink", "incestuoso", "comedor-de-casadas", "unicornio-sexual", "maniaco-sexual"]
-    	    var guei = lgbt[Math.floor(Math.random() * lgbt.length)]
-			if (args.length == 1) {
-				await kill.sendTextWithMentions(from, gaak[1] + ' é ' + lvpc + '% ' + guei + '.')
+           lvak = body.trim().split(' ')
+			if (args.length == 2) {
+				await kill.sendTextWithMentions(from, '❤️ ' + lvak[1] + 'El usuario es' + lvpc + '% gay ')
             } else {
-				await kill.reply(from, `Você é ` + lvpc + '% ' + guei + '.', id)
+				await kill.reply(from, 'Lo hiciste mal...', id)
             }
-			break
-			
+			break	
 
 		case 'chance':
 			if (args.length == 0) return kill.reply(from, 'Defina algo para analisar.', id)
